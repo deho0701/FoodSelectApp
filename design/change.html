@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="change.css" />
+        <link rel="stylesheet" href="button.css" />
+    </head>
+    <body>
+        <div id="grid">
+            <div class="nav">
+                <button id="prev" type="button" class="prev">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-arrow-narrow-left"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <line x1="5" y1="12" x2="9" y2="16" />
+                        <line x1="5" y1="12" x2="9" y2="8" />
+                    </svg>
+                </button>
+                <button id="home" type="button" class="home">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-menu-2"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="wrapper">
+                <img id="img" src="../FoodSelect/picture/1.jpg" />
+            </div>
+            <div class="foot">
+                <button id="change" class="btn btn-primary btn-lg outline">Change</button>
+                <button type="button" class="cart">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-shopping-cart"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="9" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    var genButton = document.getElementById('change'),
+        textPlace = document.getElementById('randomNum');
+
+    function genRandomImage() {
+        var number = Math.floor(Math.random() * 3) + 1;
+        switch (number) {
+            case 1:
+                document.getElementById('img').src = '../FoodSelect/picture/1.jpg';
+                break;
+            case 2:
+                document.getElementById('img').src = '../FoodSelect/picture/2.jpg';
+                break;
+            case 3:
+                document.getElementById('img').src = '../FoodSelect/picture/3.jpg';
+                break;
+            default:
+                break;
+        }
+    }
+
+    genButton.addEventListener('click', genRandomImage);
+</script>

@@ -1,0 +1,9 @@
+
+
+/*체크박스*/
+input[type="checkbox"] {position:absolute; left:-3000%;}
+input[type="checkbox"] + label:before {content:""; display: inline-block; margin:0 4px 0 0; width:20px; height:20px; border:1px solid #A6A6A6; position:relative; top:5px; border-radius:3px; transition:all 0.2s;}
+input[type="checkbox"]:checked + label:before {background: #E43B3C; border-color:#E43B3C}
+input[type="checkbox"]:checked + label:after{content""; position:absolute; left:0; top:0; background:url(checkicon.png) no-repeat; width:50px; height:50px; }
+
+

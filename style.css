@@ -1,0 +1,41 @@
+body {
+    background: #f1a9a0;
+}
+.wrapper {
+    margin: 200px auto 0;
+    text-align: center;
+}
+.gen {
+    width: 2000px;
+    height: 2000px;
+    line-height: 50px;
+    background: #e74c3c;
+    border: 1px solid #e74c3c;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+    transition: all 0.1s ease;
+}
+button:hover {
+    background: #da493a;
+    border: 1px solid #da493a;
+}
+button:active {
+    background: #902015;
+    border: 1px solid #902015;
+}
+button:active,
+button:focus {
+    outline: none;
+}
+p#randomNum {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    margin: auto;
+    margin-top: 40px;
+    color: #fff;
+    box-shadow: inset 0px 0px 200px 10px #446cb3;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="change.css" />
+        <link rel="stylesheet" href="button.css" />
+    </head>
+    <body>
+        <div id="grid">
+            <div class="nav">
+                <button id="prev" type="button" class="prev">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-arrow-narrow-left"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <line x1="5" y1="12" x2="9" y2="16" />
+                        <line x1="5" y1="12" x2="9" y2="8" />
+                    </svg>
+                </button>
+                <button id="home" type="button" class="home">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-menu-2"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="wrapper">
+                <img id="img" src="../FoodSelect/picture/1.jpg" />
+            </div>
+            <div class="foot">
+                <button id="change" class="btn btn-primary btn-lg outline">Change</button>
+                <button type="button" class="cart">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-shopping-cart"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="9" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </body>
+    <!-- Copyright (c) 2020 by ahmed beheiry (https://codepen.io/ahmedbeheiry/pen/qNPoyJ)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+</html>
+
+<script>
+    // some variables //
+    var chButton = document.getElementById('change'); // Generate button
+	var prevButton = document.getElementById('prev');
+    var tmp = location.href.split('?');
+    var codeNum = String(tmp[1]);
+
+    function chaneMenu() {
+        var picCode = '';
+        while (true) {
+            var number = String(Math.floor(Math.random() * 3) + 1);
+            if (codeNum.indexOf(number) != -1) {
+                picCode = number + String(Math.floor(Math.random() * 3));
+                break;
+            } else continue;
+        }
+        document.getElementById('img').src = '../food/picture/' + picCode + '.png';
+    }
+	
+	function prevPage() {
+		location = 'checkBox.html'
+	}
+
+    chButton.addEventListener('click', chaneMenu);
+	prevButton.addEventListener('click', prevPage);
+
+	
+	
+</script>

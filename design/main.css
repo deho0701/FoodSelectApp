@@ -1,0 +1,30 @@
+body {background:white;}
+#grid{
+	display: grid;
+	height:100%;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 1fr 1fr;
+}
+.nav{
+	border-bottom: 3px solid lightgray;
+}
+.prev{
+	border:none;
+	background-color:transparent;
+	float:left;
+
+}
+.home{
+	border:none;
+	background-color:transparent;
+	float:right;
+}
+.menu-list, .next{
+	text-align:center;
+}
+ul{
+	list-style:none;
+}
+li{
+	margin-bottom:40px;
+}

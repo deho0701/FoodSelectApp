@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="checkboxStyle.css" />
+        <link rel="stylesheet" href="button.css" />
+
+        <style>
+            li {
+                font-size: x-large;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grid">
+            <div class="nav">
+                <button id="prev" type="button" class="prev">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-arrow-narrow-left"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <line x1="5" y1="12" x2="9" y2="16" />
+                        <line x1="5" y1="12" x2="9" y2="8" />
+                    </svg>
+                </button>
+                <button id="home" type="button" class="home">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-menu-2"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#E43B3C"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="menu-list">
+                <ul style="margin-top: 5%;">
+                    <li style="margin-bottom: 4%;">
+                        <input type="checkbox" id="select0" class="checkbox" />
+                        <label class="input-label checkbox" for="select0"></label>
+                        한식
+                    </li>
+                    <li style="margin-bottom: 4%;">
+                        <input type="checkbox" id="select1" class="checkbox" />
+                        <label class="input-label checkbox" for="select1"></label>
+                        분식
+                    </li>
+                    <li style="margin-bottom: 4%;">
+                        <input type="checkbox" id="select2" class="checkbox" />
+                        <label class="input-label checkbox" for="select2"></label>
+                        중식
+                    </li>
+                    <li style="margin-bottom: 4%;">
+                        <input type="checkbox" id="select3" class="checkbox" />
+                        <label class="input-label checkbox" for="select3"></label>
+                        일식
+                    </li>
+                    <li style="margin-bottom: 4%;">
+                        <input type="checkbox" id="select4" class="checkbox" />
+                        <label class="input-label checkbox" for="select4"></label>
+                        양식
+                    </li>
+                </ul>
+            </div>
+
+            <div class="next">
+                <ul>
+                    <button id="next" type="button" class="btn btn-primary btn-lg outline">
+                        Next
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function changepage() {
+        location = 'change.html';
+    }
+
+    var genButton = document.getElementById('next');
+
+    genButton.addEventListener('click', changepage);
+</script>
