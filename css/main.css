@@ -5,8 +5,13 @@ body {background:white;}
 	grid-template-columns: 1fr;
 	grid-template-rows: 50px 1fr 1fr;
 }
+
+
 .nav{
 	border-bottom: 3px solid #e43b3c;
+}
+.sideNav {
+	border-bottom: 3px solid #ffffff;
 }
 .prev{
 	border:none;
@@ -19,6 +24,13 @@ body {background:white;}
 	background-color:transparent;
 	float:right;
 }
+
+.prev {
+	border: none;
+	background-color: transparent;
+	float: left;
+}
+
 .menu-list, .next{
 	text-align:center;
 }

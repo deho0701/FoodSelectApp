@@ -8,9 +8,20 @@ body {
 	grid-template-columns: 1fr;
 	grid-template-rows: 50px 1fr 1fr;
 }
+#sideGrid {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 1fr 1fr;
+	padding-top: 8px;
+	padding-right: 8px;
+}
 
-.nav{
-	border-bottom: 3px solid lightgray;
+.nav {
+	border-bottom: 3px solid #e43b3c;
+}
+.sideNav {
+	border-bottom: 3px solid #ffffff;
 }
 .prev{
 	border:none;
@@ -34,12 +45,23 @@ body {
 	text-align: center;
 }
 .cart{
-	border:none;
+	border:white;
 	background-color:transparent;
 	position:relative;
 	top:16px;
 
 }
+.diasble {
+	border: white;
+	background-color: transparent;
+	float: left;
+}
+.basket {
+	border: white;
+	background-color: transparent;
+	float: right;
+}
+
 #img {
     width: 100%;
     height: 100%;

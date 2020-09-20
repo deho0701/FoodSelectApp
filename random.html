@@ -1,44 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="change.css" />
-        <link rel="stylesheet" href="button.css" />
-    </head>
-    <body>
-        <div id="grid">
-            <div class="nav">
-                <button id="prev" type="button" class="prev">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-arrow-narrow-left"
-                        width="44"
-                        height="44"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="#E43B3C"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Food?</title>
+    <meta name="description" content="What Food?" />
+    <meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="css/component.css" />
+    <link rel="stylesheet" href="css/change.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="menu">
+        <div id="sideGrid">
+            <div class="sideNav">
+                <button id="diasble" type="button" class="diasble">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="icon icon-tabler icon-tabler-arrow-narrow-right"
+                         width="44"
+                         height="44"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="#ffffff"
+                         fill="none"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" />
                         <line x1="5" y1="12" x2="19" y2="12" />
-                        <line x1="5" y1="12" x2="9" y2="16" />
-                        <line x1="5" y1="12" x2="9" y2="8" />
+                        <line x1="19" y1="12" x2="14" y2="16" />
+                        <line x1="19" y1="12" x2="14" y2="8" />
                     </svg>
                 </button>
-                <button id="home" type="button" class="home">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-menu-2"
-                        width="44"
-                        height="44"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="#E43B3C"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
+                <button id="basket" type="button" class="home">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="icon icon-tabler icon-tabler-menu-2"
+                         width="44"
+                         height="44"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="#ffffff"
+                         fill="none"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" />
                         <line x1="4" y1="6" x2="20" y2="6" />
                         <line x1="4" y1="12" x2="20" y2="12" />
@@ -46,51 +53,123 @@
                     </svg>
                 </button>
             </div>
-            <div class="wrapper">
-                <img id="img" src="../FoodSelect/picture/1.jpg" />
-            </div>
-            <div class="foot">
-                <button id="change" class="btn btn-primary btn-lg outline">Change</button>
-                <button type="button" class="cart">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-shopping-cart"
-                        width="44"
-                        height="44"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="#E43B3C"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <circle cx="9" cy="19" r="2" />
-                        <circle cx="17" cy="19" r="2" />
-                        <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
-                    </svg>
-                </button>
-            </div>
         </div>
-    </body>
-    <!-- Copyright (c) 2020 by ahmed beheiry (https://codepen.io/ahmedbeheiry/pen/qNPoyJ)
+    </nav>
+    <div id="grid">
+        <div class="nav">
+            <button id="prev" type="button" class="prev">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="icon icon-tabler icon-tabler-arrow-narrow-left"
+                     width="44"
+                     height="44"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="#E43B3C"
+                     fill="none"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <line x1="5" y1="12" x2="9" y2="16" />
+                    <line x1="5" y1="12" x2="9" y2="8" />
+                </svg>
+            </button>
+            <button id="home" type="button" class="home">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="icon icon-tabler icon-tabler-menu-2"
+                     width="44"
+                     height="44"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="#E43B3C"
+                     fill="none"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <line x1="4" y1="6" x2="20" y2="6" />
+                    <line x1="4" y1="12" x2="20" y2="12" />
+                    <line x1="4" y1="18" x2="20" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div class="wrapper">
+            <img id="img" src="../FoodSelect/picture/1.jpg" />
+        </div>
+        <div class="foot">
+            <button id="change" class="btn btn-primary btn-lg outline">Change</button>
+            <button type="button" class="cart">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="icon icon-tabler icon-tabler-shopping-cart"
+                     width="44"
+                     height="44"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="#E43B3C"
+                     fill="none"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <circle cx="9" cy="19" r="2" />
+                    <circle cx="17" cy="19" r="2" />
+                    <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!--Slide Menu Script-->
+    <script src="js/classie.js"></script>
+    <script>
+        var menu = document.getElementById('menu'),
+            show = document.getElementById('home'),
+            dis = document.getElementById('diasble'),
+            body = document.body;
+
+        show.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(menu, 'cbp-spmenu-open');
+            disableOther('show');
+        };
+
+        function disableOther(button) {
+            if (button !== 'show') {
+                classie.toggle(show, 'disabled');
+            }
+        }
+    </script>
+</body>
+<!-- Copyright (c) 2020 by ahmed beheiry (https://codepen.io/ahmedbeheiry/pen/qNPoyJ)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ All our downloadable resources are licenced under the MIT license (if not mentioned otherwise):
+
+
+Copyright (c) 2020 Codrops (http://tympanus.net/codrops/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ¡°Software¡±), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED ¡°AS IS¡±, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Our design freebies can be used in personal or commercial projects with the exception of redistribution, republishing or sale of the item itself, parts of the item, or edited versions.
+
+You are free to copy excerpts of our articles but please don¡¯t republish entire articles. If you¡¯d like to translate single articles, please contact us.
+ -->
 </html>
 
 <script>
-    // some variables //
-    var chButton = document.getElementById('change'); // Generate button
+    var chButton = document.getElementById('change');
 	var prevButton = document.getElementById('prev');
     var tmp = location.href.split('?');
     var codeNum = String(tmp[1]);
 
     function chaneMenu() {
-        var picCode = '';
+        var picCode;
         while (true) {
             var number = String(Math.floor(Math.random() * 3) + 1);
             if (codeNum.indexOf(number) != -1) {
@@ -98,16 +177,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 break;
             } else continue;
         }
-        document.getElementById('img').src = '../FoodSelectApp/picture/' + picCode + '.png';
+        document.getElementById('img').src = '../food/picture/' + picCode + '.png';
     }
-	
 	function prevPage() {
 		location = 'checkBox.html'
 	}
-
     chButton.addEventListener('click', chaneMenu);
 	prevButton.addEventListener('click', prevPage);
-
-	
-	
 </script>
