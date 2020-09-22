@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
     <script src="js/modernizr.custom.js"></script>
 </head>
 <body>
-    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="menu">
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
         <div id="sideGrid">
             <div class="sideNav">
                 <button id="diasble" type="button" class="diasble">
@@ -35,9 +35,9 @@
                         <line x1="19" y1="12" x2="14" y2="8" />
                     </svg>
                 </button>
-                <button id="basket" type="button" class="home">
+                <button id="basket" type="button" class="basket">
                     <svg xmlns="http://www.w3.org/2000/svg"
-                         class="icon icon-tabler icon-tabler-menu-2"
+                         class="icon icon-tabler icon-tabler-shopping-cart"
                          width="44"
                          height="44"
                          viewBox="0 0 24 24"
@@ -47,9 +47,9 @@
                          stroke-linecap="round"
                          stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" />
-                        <line x1="4" y1="6" x2="20" y2="6" />
-                        <line x1="4" y1="12" x2="20" y2="12" />
-                        <line x1="4" y1="18" x2="20" y2="18" />
+                        <circle cx="9" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
                     </svg>
                 </button>
             </div>
@@ -93,7 +93,7 @@
             </button>
         </div>
         <div class="wrapper">
-            <img id="img" src="../FoodSelect/picture/1.jpg" />
+            <img id="img" src="../FoodSelectApp/picture/1.jpg" />
         </div>
         <div class="foot">
             <button id="change" class="btn btn-primary btn-lg outline">Change</button>
@@ -119,17 +119,20 @@
     <!--Slide Menu Script-->
     <script src="js/classie.js"></script>
     <script>
-        var menu = document.getElementById('menu'),
+        var menu = document.getElementById('cbp-spmenu-s2'),
             show = document.getElementById('home'),
-            dis = document.getElementById('diasble'),
-            body = document.body;
+            disable = document.getElementById('diasble');
 
         show.onclick = function () {
             classie.toggle(this, 'active');
             classie.toggle(menu, 'cbp-spmenu-open');
             disableOther('show');
         };
-
+        disable.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(menu, 'cbp-spmenu-open');
+            disableOther('show');
+        };
         function disableOther(button) {
             if (button !== 'show') {
                 classie.toggle(show, 'disabled');
@@ -150,15 +153,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Copyright (c) 2020 Codrops (http://tympanus.net/codrops/)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ¡°Software¡±), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ï¿½ï¿½Softwareï¿½ï¿½), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED ¡°AS IS¡±, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Our design freebies can be used in personal or commercial projects with the exception of redistribution, republishing or sale of the item itself, parts of the item, or edited versions.
 
-You are free to copy excerpts of our articles but please don¡¯t republish entire articles. If you¡¯d like to translate single articles, please contact us.
+You are free to copy excerpts of our articles but please donï¿½ï¿½t republish entire articles. If youï¿½ï¿½d like to translate single articles, please contact us.
  -->
 </html>
 
@@ -177,7 +180,7 @@ You are free to copy excerpts of our articles but please don¡¯t republish entire
                 break;
             } else continue;
         }
-        document.getElementById('img').src = '../food/picture/' + picCode + '.png';
+        document.getElementById('img').src = '../FoodSelectApp/picture/' + picCode + '.png';
     }
 	function prevPage() {
 		location = 'checkBox.html'
