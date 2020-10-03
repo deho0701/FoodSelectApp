@@ -1,4 +1,5 @@
 <html lang="ko">
+    <meta charset="UTF-8">
     <head>
         <link rel="stylesheet" href="css/boxStyle.css" />
         <link rel="stylesheet" href="css/main.css" />
@@ -32,10 +33,10 @@
                 </button>
             </div>
                     <div class="menu-list">
-                        <ul>
+                        <ul class= "react">
                             <li>
                                 <input type="checkbox" id="select0" class="checkbox" />
-                                <label class="input-label checkbox" for="select0"><img src="../FoodSelectApp/picture/Carrot_icon-icons.com_68773.jpg"/>한식</label>
+                                <label class="input-label checkbox" for="select0"><img src="http://gnuserver.dothome.co.kr/picture/Carrot_icon-icons.com_68773.jpg"/>한식</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="select1" class="checkbox" />
@@ -84,6 +85,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     var num = '';
 
     arrChk[0] = document.getElementById('select0');
+    console.log(arrChk[0])
     arrChk[1] = document.getElementById('select1');
     arrChk[2] = document.getElementById('select2');
     arrChk[3] = document.getElementById('select3');
@@ -94,6 +96,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             if (arrChk[i].checked) {
                 var n = i + 1;
                 num = num + n;
+                
             } else continue;
         }
         window.location.href = 'random.html?' + num;
