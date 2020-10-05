@@ -15,7 +15,7 @@
     <script src="js/modernizr.custom.js"></script>
 </head>
 <body>
-    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+    <nav class="menu menu-vertical menu-right" id="menu">
         <div id="sideGrid">
             <div class="sideNav">
                 <button id="diasble" type="button" class="diasble">
@@ -52,6 +52,16 @@
                         <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
                     </svg>
                 </button>
+            </div>
+            <div id="cart" class="cart">
+                <div class="cart-item">
+                  <img src="../FoodSelectApp/picture/1.jpg" class="cart-image" id="item-image"/>
+                </div>
+                <div id="end">
+                </div>
+                <!--<a href="#" id="cart-item-remove" class="cart-item-remove">
+                  <i class="trash-icon"></i>
+                </a>-->
             </div>
         </div>
     </nav>
@@ -97,7 +107,7 @@
         </div>
         <div class="foot">
             <button id="change" class="btn btn-primary btn-lg outline">Change</button>
-            <button type="button" class="cart">
+            <button type="button" class="cart-button">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      class="icon icon-tabler icon-tabler-shopping-cart"
                      width="44"
@@ -119,25 +129,46 @@
     <!--Slide Menu Script-->
     <script src="js/classie.js"></script>
     <script>
-        var menu = document.getElementById('cbp-spmenu-s2'),
+        var menu = document.getElementById('menu'),
             show = document.getElementById('home'),
             disable = document.getElementById('diasble');
 
-        show.onclick = function () {
-            classie.toggle(this, 'active');
-            classie.toggle(menu, 'cbp-spmenu-open');
-            disableOther('show');
-        };
+        show.addEventListener("click", function(){
+          menu.classList.toggle("menu-open");
+        })
         disable.onclick = function () {
-            classie.toggle(this, 'active');
-            classie.toggle(menu, 'cbp-spmenu-open');
-            disableOther('show');
+          classie.toggle(menu, 'menu-open');
         };
-        function disableOther(button) {
-            if (button !== 'show') {
-                classie.toggle(show, 'disabled');
-            }
-        }
+    </script>
+    <script>
+        const cartBtn = document.querySelectorAll('.cart-button');
+
+        cartBtn.forEach(function(btn){
+            btn.addEventListener('click',function(event){
+              //console.log(event.target);
+
+                if(event.target.parentElement.classList.contains("cart-button")){
+                  let path = document.getElementById("img").src;
+                  let pos = path.indexOf("");
+
+                  const item = {};
+                  item.img = path;
+                  console.log(item.img);
+
+                  const cartItem = document.createElement('div');
+                  cartItem.classList.add("cart-item");
+
+                  cartItem.innerHTML = '<img src="../FoodSelectApp/picture/$(path)" class="cart-image" id="item-image"/>';
+
+                  //select cart
+                  const cart = document.getElementById("cart");
+                  const end = document.getElementById("end");
+
+                  cart.insertBefore(cartItem,end);
+                  alert("Hi");
+                }
+              });
+        });
     </script>
 </body>
 <!-- Copyright (c) 2020 by ahmed beheiry (https://codepen.io/ahmedbeheiry/pen/qNPoyJ)
