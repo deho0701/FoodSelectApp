@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/change.css" />
     <link rel="stylesheet" href="css/button.css" />
     <script src="js/modernizr.custom.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <nav class="menu menu-vertical menu-right" id="menu">
@@ -148,17 +149,19 @@
               //console.log(event.target);
 
                 if(event.target.parentElement.classList.contains("cart-button")){
-                  let path = document.getElementById("img").src;
-                  let pos = path.indexOf("");
+                  let fullpath = document.getElementById("img").src;
+                  let pos = fullpath.indexOf("picture") + 7;
+                  let partPath = fullpath.slice(pos);
+                  console.log(partPath);
 
                   const item = {};
-                  item.img = path;
-                  console.log(item.img);
+                  item.img = "../FoodSelectApp/picture" + partPath;
+                  console.log(item);
 
                   const cartItem = document.createElement('div');
                   cartItem.classList.add("cart-item");
 
-                  cartItem.innerHTML = '<img src="../FoodSelectApp/picture/$(path)" class="cart-image" id="item-image"/>';
+                  cartItem.innerHTML = '<img src=$(item.img) class="cart-image" id="item-image"/>';
 
                   //select cart
                   const cart = document.getElementById("cart");
