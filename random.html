@@ -57,12 +57,10 @@
             <div id="cart" class="cart">
                 <div class="cart-item">
                   <img src="../FoodSelectApp/picture/1.jpg" class="cart-image" id="item-image"/>
+
+                  <button id="cart-item-remove" class="cart-item-remove"></button>
                 </div>
-                <div id="end">
-                </div>
-                <!--<a href="#" id="cart-item-remove" class="cart-item-remove">
-                  <i class="trash-icon"></i>
-                </a>-->
+                <div id="end"></div>
             </div>
         </div>
     </nav>
@@ -143,6 +141,7 @@
     </script>
     <script>
         const cartBtn = document.querySelectorAll('.cart-button');
+        const removeBtn = document.getElementById('cart-item-remove');
 
         cartBtn.forEach(function(btn){
             btn.addEventListener('click',function(event){
@@ -161,8 +160,8 @@
                   const cartItem = document.createElement('div');
                   cartItem.classList.add("cart-item");
 
-                  cartItem.innerHTML = '<img src='+item.img+' class="cart-image" id="item-image"/>';
-          
+                  cartItem.innerHTML = '<img src=' + item.img + ' class="cart-image" id="item-image"/> <button id="cart-item-remove" class="cart-item-remove"></button>';
+
                   //select cart
                   const cart = document.getElementById("cart");
                   const end = document.getElementById("end");
@@ -172,6 +171,12 @@
                 }
               });
         });
+
+        function remove(){
+          console.log(event.target.parentElement);
+        }
+        removeBtn.addEventListener('click',remove);
+        
     </script>
 </body>
 <!-- Copyright (c) 2020 by ahmed beheiry (https://codepen.io/ahmedbeheiry/pen/qNPoyJ)
