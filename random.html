@@ -161,8 +161,8 @@
                   const cartItem = document.createElement('div');
                   cartItem.classList.add("cart-item");
 
-                  cartItem.innerHTML = '<img src=$(item.img) class="cart-image" id="item-image"/>';
-
+                  cartItem.innerHTML = '<img src='+item.img+' class="cart-image" id="item-image"/>';
+          
                   //select cart
                   const cart = document.getElementById("cart");
                   const end = document.getElementById("end");
