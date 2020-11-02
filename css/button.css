@@ -6,7 +6,7 @@
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-top: 15vw;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -23,13 +23,22 @@
   border-radius: 4px;
   padding: 10px 16px;
 }
-  
-.btn-lg {
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 6px;
+/* 모바일 기기*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+  .btn-lg {
+    font-size: 4vw;
+    line-height: 1.33;
+    border-radius: 6px;
+  }
 }
-
+/* pc*/
+@media only screen and (min-device-width : 1024px)  {
+  .btn-lg {
+    font-size: 2.5vw;
+    line-height: 1.33;
+    border-radius: 6px;
+  }
+}
 .btn-primary {
   color: #fff;
   background-color: #E43B3C;
@@ -69,7 +78,7 @@
 }
 
 /***********************
-  CUSTON BTN VALUES
+  CUSTON BTN VALUESs
 ************************/
 
 .btn {

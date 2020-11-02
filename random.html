@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="css/change.css" />
     <link rel="stylesheet" href="css/button.css" />
     <script src="js/modernizr.custom.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+    <nav class="menu menu-vertical menu-right" id="menu">
         <div id="sideGrid">
             <div class="sideNav">
                 <button id="diasble" type="button" class="diasble">
@@ -52,6 +53,14 @@
                         <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
                     </svg>
                 </button>
+            </div>
+            <div id="cart" class="cart">
+                <div class="cart-item">
+                  <img src="../FoodSelectApp/picture/1.jpg" class="cart-image" id="item-image"/>
+
+                  <button id="cart-item-remove" class="cart-item-remove"></button>
+                </div>
+                <div id="end"></div>
             </div>
         </div>
     </nav>
@@ -97,7 +106,7 @@
         </div>
         <div class="foot">
             <button id="change" class="btn btn-primary btn-lg outline">Change</button>
-            <button type="button" class="cart">
+            <button type="button" class="cart-button">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      class="icon icon-tabler icon-tabler-shopping-cart"
                      width="44"
@@ -119,25 +128,55 @@
     <!--Slide Menu Script-->
     <script src="js/classie.js"></script>
     <script>
-        var menu = document.getElementById('cbp-spmenu-s2'),
+        var menu = document.getElementById('menu'),
             show = document.getElementById('home'),
             disable = document.getElementById('diasble');
 
-        show.onclick = function () {
-            classie.toggle(this, 'active');
-            classie.toggle(menu, 'cbp-spmenu-open');
-            disableOther('show');
-        };
+        show.addEventListener("click", function(){
+          menu.classList.toggle("menu-open");
+        })
         disable.onclick = function () {
-            classie.toggle(this, 'active');
-            classie.toggle(menu, 'cbp-spmenu-open');
-            disableOther('show');
+          classie.toggle(menu, 'menu-open');
         };
-        function disableOther(button) {
-            if (button !== 'show') {
-                classie.toggle(show, 'disabled');
-            }
+    </script>
+    <script>
+        const cartBtn = document.querySelectorAll('.cart-button');
+        const removeBtn = document.getElementById('cart-item-remove');
+
+        cartBtn.forEach(function(btn){
+            btn.addEventListener('click',function(event){
+              //console.log(event.target);
+
+                if(event.target.parentElement.classList.contains("cart-button")){
+                  let fullpath = document.getElementById("img").src;
+                  let pos = fullpath.indexOf("picture") + 7;
+                  let partPath = fullpath.slice(pos);
+                  console.log(partPath);
+
+                  const item = {};
+                  item.img = "../FoodSelectApp/picture" + partPath;
+                  console.log(item);
+
+                  const cartItem = document.createElement('div');
+                  cartItem.classList.add("cart-item");
+
+                  cartItem.innerHTML = '<img src=' + item.img + ' class="cart-image" id="item-image"/> <button id="cart-item-remove" class="cart-item-remove"></button>';
+
+                  //select cart
+                  const cart = document.getElementById("cart");
+                  const end = document.getElementById("end");
+
+                  cart.insertBefore(cartItem,end);
+                  alert("Hi");
+                }
+              });
+        });
+
+        function remove(){
+          console.log(event.target.parentElement);
         }
+        removeBtn.addEventListener('click',remove);
+        
     </script>
 </body>
 <!-- Copyright (c) 2020 by ahmed beheiry (https://codepen.io/ahmedbeheiry/pen/qNPoyJ)
